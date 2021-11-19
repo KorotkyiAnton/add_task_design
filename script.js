@@ -14,10 +14,10 @@ function handleTouchMove(event){
         return false;
     }
     let x2 = event.touches[0].clientX;
-    if((x2-x1)>200){
+    if((x2-x1)>150){
         document.getElementById('main_menu').style.display = "block";
         document.getElementById('block_main').style.display = "none";
-    } else if((x2-x1)<-200){
+    } else if((x2-x1)<-150){
         document.getElementById('main_menu').style.display="none";
         document.getElementById('block_main').style.display = "block";
     }
@@ -32,10 +32,10 @@ function handleMouseMove(event){
         return false;
     }
     x2 = event.pageX;
-    if((x2-x1)>200){
+    if((x2-x1)>150){
         document.getElementById('main_menu').style.display = "block";
         document.getElementById('block_main').style.display = "none";
-    } else if((x2-x1)<-200){
+    } else if((x2-x1)<-150){
         document.getElementById('main_menu').style.display="none";
         document.getElementById('block_main').style.display = "block";
     }
