@@ -3,7 +3,7 @@ document.addEventListener('touchmove', handleTouchMove, false);
 document.addEventListener('mousedown', handleMouseStart, false);
 document.addEventListener('mousemove', handleMouseMove, false);
 
-let swipe_size = 1200;
+let swipe_size = 1300;
 
 let x1 = null;
 
