@@ -10,7 +10,18 @@ body{
     font-family:Arial;
 }
 
-.block_main{
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+.main_menu{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.block_main, .main_menu{
     position: absolute; /*position*/
     top: 50%;
     left: 50%;
@@ -54,13 +65,10 @@ body{
     max-height: 30%;
 }
 
-.block_menu>a{
-    height: 25px;
+.main_menu>a{
     padding-top: 5px;
     display: block;
-    width: 85%;
     text-decoration: none;
-    color: black;
-    font-size: 1.2em;
-    background: whitesmoke;
+    color: white;
+    font-size: 3em;
 }
