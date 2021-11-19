@@ -3,9 +3,14 @@ document.addEventListener('touchmove', handleTouchMove, false);
 document.addEventListener('mousedown', handleMouseStart, false);
 document.addEventListener('mousemove', handleMouseMove, false);
 
+let swipe_size = 1200;
+
 let x1 = null;
 
 function handleTouchStart(event){
+    if(window.innerWidth<=640){
+        swipe_size = 200;
+    }
     x1 = event.touches[0].clientX;
 }
 
@@ -14,16 +19,19 @@ function handleTouchMove(event){
         return false;
     }
     let x2 = event.touches[0].clientX;
-    if((x2-x1)>150){
+    if((x2-x1)>swipe_size){
         document.getElementById('main_menu').style.display = "block";
         document.getElementById('block_main').style.display = "none";
-    } else if((x2-x1)<-150){
+    } else if((x2-x1)<-swipe_size){
         document.getElementById('main_menu').style.display="none";
         document.getElementById('block_main').style.display = "block";
     }
 }
 
 function handleMouseStart(event){
+    if(window.innerWidth<=640){
+        swipe_size = 200;
+    }
     x1 = event.pageX;
 }
 
@@ -32,11 +40,13 @@ function handleMouseMove(event){
         return false;
     }
     x2 = event.pageX;
-    if((x2-x1)>150){
+    if((x2-x1)>swipe_size){
         document.getElementById('main_menu').style.display = "block";
         document.getElementById('block_main').style.display = "none";
-    } else if((x2-x1)<-150){
+        x1 = null;
+    } else if((x2-x1)<-swipe_size){
         document.getElementById('main_menu').style.display="none";
         document.getElementById('block_main').style.display = "block";
+        x1 = null;
     }
 }
